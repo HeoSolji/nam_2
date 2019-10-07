@@ -1,6 +1,5 @@
-.class
-.metadata/
+*.class
 .vscode/
-.classpath
-*.prefs
-_hdt/da_hinh/.project
+/.idea/
+*.zip
+*.iml
