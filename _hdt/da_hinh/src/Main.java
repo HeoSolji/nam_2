@@ -1,7 +1,9 @@
 class Main {
    public static void main(String[] args) {
-      Shape s = new Circle(1.0);
-      System.out.println(s.getArea());
-      System.out.print("GIT TEST");
+      Square s = new Square();
+      s.setSide(2f);
+      s.setColor("red");
+      s.setFilled(true);
+      System.out.println(s.toString());
    }
 }

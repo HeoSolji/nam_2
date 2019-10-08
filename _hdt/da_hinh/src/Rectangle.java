@@ -33,7 +33,7 @@ public class Rectangle extends Shape {
       return 2*(width+length);
    }
 
-   // public String toString() {
-   //   return
-   // }
+    public String toString() {
+      return "Rectangle[width=" + getWidth() + ",length=" + getLength() + ",color=" + getColor() + ",filled=" + isFilled() + "]";
+    }
 }

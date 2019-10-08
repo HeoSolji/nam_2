@@ -11,9 +11,7 @@ public abstract class Shape {
    public void setColor(String color) {
       this.color = color;
    }
-   public String getColor() {
-      return color;
-   }
+   public String getColor() { return color; }
    public void setFilled(boolean filled) {
       this.filled = filled;
    }
