@@ -27,10 +27,10 @@ public class Rectangle extends Shape {
    }
 
    public double getArea() {
-      return width*length;
+      return getWidth()*getLength();
    }
    public double getPerimeter() {
-      return 2*(width+length);
+      return 2*(getWidth()+getLength());
    }
 
     public String toString() {
