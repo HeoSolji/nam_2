@@ -1,7 +1,7 @@
 
 public class Circle extends Shape {
    protected double radius;
-   private static final double PI = 3.14;
+   private static final double PI = Math.PI;
 
    public Circle() {}
    public Circle(double radius) {
@@ -20,11 +20,11 @@ public class Circle extends Shape {
    }
 
    public double getArea() {
-      return PI*radius*radius;
+      return PI*getRadius()*getRadius();
    }
 
    public double getPerimeter() {
-      return 2*PI*radius;
+      return 2*PI*getRadius();
    }
 
    public String toString() {
