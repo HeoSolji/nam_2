@@ -13,7 +13,7 @@ public class Main {
       screen.addShape(circle1);
       screen.addShape(square);
       screen.addShape(circle2);
-      screen.removeDuplicates();
+//      screen.removeDuplicates();
       System.out.print(screen.getInfo());
    }
 

@@ -33,14 +33,14 @@ public class Square extends Rectangle {
 
    @Override
    public void setWidth(double side) {
-      super.setWidth(side);
-      super.setLength(side);
+      width = side;
+      length = side;
    }
 
    @Override
    public void setLength(double side) {
-      super.setLength(side);
-      super.setWidth(side);
+      width = side;
+      length = side;
    }
 
    @Override
@@ -50,7 +50,10 @@ public class Square extends Rectangle {
 
    @Override
    public boolean equals(Object obj) {
-      return super.equals(obj);
+       if (obj instanceof Square) {
+          return super.equals(obj);
+       }
+       return false;
    }
 
    public String toString() {

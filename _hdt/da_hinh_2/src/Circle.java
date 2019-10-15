@@ -55,8 +55,12 @@ public class Circle extends Shape {
    }
 
    @Override
-   public boolean equals(Object circle) {
-      return true;
+   public boolean equals(Object object) {
+      //TODO complete the equals function
+      if (object instanceof Circle) {
+         return Math.abs(this.getRadius() - ((Circle) object).getRadius()) < 0.001;
+      }
+      return false;
    }
 
    public String toString() {

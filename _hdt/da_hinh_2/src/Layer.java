@@ -6,7 +6,7 @@ import java.util.Set;
  * Created by Khiem472 on 09/10/2019.
  */
 public class Layer {
-   public ArrayList<Shape> list = new ArrayList<>();
+   public static ArrayList<Shape> list = new ArrayList<Shape>();
 
    public void addShape(Shape shape) {
       list.add(shape);
@@ -15,7 +15,7 @@ public class Layer {
    public String getInfo() {
       String s = "Layer of crazy shapes:\n";
       for (Object o : list)
-         s += o.toString() + "\n";
+         s += (o.toString() + "\n");
       return s;
    }
 
@@ -24,8 +24,8 @@ public class Layer {
    }
 
    public void removeDuplicates() {
-      Set<Shape> set = new LinkedHashSet<Shape>(list);
+      LinkedHashSet<Shape> set = new LinkedHashSet<Shape>(list);
       ArrayList<Shape> ls = new ArrayList<>(set);
-      this.list = ls;
+      list = ls;
    }
 }

@@ -1,3 +1,5 @@
+import com.sun.org.apache.regexp.internal.RE;
+
 /**
  * Created by Khiem472 on 09/10/2019.
  */
@@ -65,7 +67,10 @@ public class Rectangle extends Shape {
 
    @Override
    public boolean equals(Object obj) {
-      return super.equals(obj);
+      if (obj instanceof Circle) {
+         return Math.abs(this.getWidth() - ((Rectangle) obj).getWidth()) < 0.001 && Math.abs(this.getLength() - ((Rectangle) obj).getLength()) < 0.001;
+      }
+      return false;
    }
 
    @Override
