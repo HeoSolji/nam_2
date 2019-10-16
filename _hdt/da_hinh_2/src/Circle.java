@@ -1,6 +1,7 @@
 /**
  * Created by Khiem472 on 09/10/2019.
  */
+import java.util.Objects;
 
 public class Circle extends Shape {
    private static final double PI = Math.PI;
@@ -55,16 +56,15 @@ public class Circle extends Shape {
    }
 
    @Override
-   public boolean equals(Object object) {
-      //TODO complete the equals function
-      if (object instanceof Circle) {
-         return Math.abs(this.getRadius() - ((Circle) object).getRadius()) < 0.001;
-      }
-      return false;
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (!(o instanceof Circle)) return false;
+      Circle circle = (Circle) o;
+      return Double.compare(circle.radius, radius) == 0 && Objects.equals(circle.center, center);
    }
 
-   public String toString() {
-      return "Circle[center=" + getCenter().toString() + ",radius=" + (double) Math.round(getRadius()) + ",color=" + getColor() + ",filled=" + isFilled() + "]";
+   public String toString () {
+      return "Circle[center=" + center + ",radius=" + radius + ",color=" + color + ",filled=" + filled +"]";
    }
 }
 

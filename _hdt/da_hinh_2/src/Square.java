@@ -1,6 +1,7 @@
 /**
  * Created by Khiem472 on 08/10/2019.
  */
+import java.util.Objects;
 public class Square extends Rectangle {
 
    public Square() {
@@ -49,14 +50,14 @@ public class Square extends Rectangle {
    }
 
    @Override
-   public boolean equals(Object obj) {
-       if (obj instanceof Square) {
-          return super.equals(obj);
-       }
-       return false;
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (!(o instanceof Square)) return false;
+      Square square = (Square) o;
+      return Double.compare(square.width, width) == 0 && Double.compare(square.length, length) == 0 && Objects.equals(topLeft, square.topLeft);
    }
 
    public String toString() {
-      return "Square[topLeft=" + getTopLeft().toString() + "side=" + getSide() + ",color=" + getColor() + ",filled=" + isFilled() + "]";
+      return "Square[topLeft=" + topLeft + ",side=" + getSide() + ",color=" + color + ",filled=" + filled + "]";
    }
 }

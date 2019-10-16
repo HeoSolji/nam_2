@@ -1,8 +1,8 @@
-import com.sun.org.apache.regexp.internal.RE;
 
 /**
  * Created by Khiem472 on 09/10/2019.
  */
+import java.util.Objects;
 public class Rectangle extends Shape {
    protected double width;
    protected double length;
@@ -62,15 +62,15 @@ public class Rectangle extends Shape {
    }
 
    public String toString() {
-      return "Rectangle[topLeft=" + getTopLeft().toString() + "width=" + (double) Math.round(getWidth()) + ",length=" + (double) Math.round(getLength()) + ",color=" + getColor() + ",filled=" + isFilled() + "]";
+      return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length + ",color=" + color + ",filled=" + filled + "]";
    }
 
    @Override
-   public boolean equals(Object obj) {
-      if (obj instanceof Circle) {
-         return Math.abs(this.getWidth() - ((Rectangle) obj).getWidth()) < 0.001 && Math.abs(this.getLength() - ((Rectangle) obj).getLength()) < 0.001;
-      }
-      return false;
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (!(o instanceof Rectangle)) return false;
+      Rectangle rectangle = (Rectangle) o;
+      return Double.compare(rectangle.width, width) == 0 && Double.compare(rectangle.length, length) == 0 && Objects.equals(topLeft, rectangle.topLeft);
    }
 
    @Override

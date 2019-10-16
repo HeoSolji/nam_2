@@ -33,7 +33,17 @@ public class Point {
    }
 
    @Override
+   public boolean equals(Object obj) {
+      if (obj instanceof Point) {
+         if (this.getX() == ((Point) obj).getX() && this.getY() == ((Point) obj).getY())
+            return true;
+         else return false;
+      }
+      return false;
+   }
+
+   @Override
    public String toString() {
-      return "(" + (double) Math.round(getX() * 10) / 10 + "," + (double) Math.round(getY() * 10) / 10 + ")";
+      return "(" + x + "," + y + ")";
    }
 }
